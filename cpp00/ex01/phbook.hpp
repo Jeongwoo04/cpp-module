@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phbook.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 14:10:54 by jeson             #+#    #+#             */
-/*   Updated: 2022/01/28 18:03:16 by jeson            ###   ########.fr       */
+/*   Created: 2022/01/24 15:24:48 by jeson             #+#    #+#             */
+/*   Updated: 2022/02/01 20:05:28 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHBOOK_HPP
+#define PHBOOK_HPP
+
 #include <iostream>
+#include <string>
+#include <sstream>
+#include "Contact.hpp"
 
-char	ft_toupper(char ch)
+class Phbook
 {
-	if (ch >= 65 && ch <= 90)
-		return (ch);
-	else if (ch >= 97 && ch <= 122)
-		return (ch - 32);
-	return (ch);
-}
+private:
+	int size;
+	int	idx;
+	Contact arr[8];
+	std::string fill_up(std::string txt);
+	void	search_choice(void);
 
-int	main(int argc, char **argv)
-{
-	int	i;
+public:
+	Phbook();
+	void	add(int idx);
+	void	search(void);
+};
 
-	if (argc < 2)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	argv++;
-	while (*argv)
-	{
-		for (int i = 0; *argv[i]; argv[i]++)
-			std::cout << ft_toupper(*argv[i]);
-		argv++;
-	}
-	std::cout << std::endl;
-	return (0);
-}
+#endif
