@@ -1,4 +1,4 @@
-NAME		= account
+NAME		= Account
 CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes

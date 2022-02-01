@@ -1,18 +1,18 @@
-NAME	= phbook
-CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
-INC		= -I includes
-SRCS	= main.cpp phbook.cpp Contact.cpp
-OBJS	= $(SRCS:.cpp=.o)
-RM		= rm -f
+NAME		= phbook
+CXX			= clang++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+INC			= -I includes
+SRCS		= main.cpp phbook.cpp Contact.cpp
+OBJS		= $(SRCS:.cpp=.o)
+RM			= rm -f
 
 all		: $(NAME)
 
 $(OBJS)		: %.o:%.cpp
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INC) -c $< -o $@
 
 $(NAME)	: $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean	:
 	$(RM) $(OBJS)
