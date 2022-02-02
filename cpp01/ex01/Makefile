@@ -2,7 +2,7 @@ NAME		= Moar_brainz!
 CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes
-SRCS		= main.cpp Zombie.cpp Zombie.hpp ZombieHorde.cpp
+SRCS		= main.cpp Zombie.cpp ZombieHorde.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 
