@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 20:21:56 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/01 20:24:31 by jeson            ###   ########.fr       */
+/*   Created: 2022/02/01 20:22:04 by jeson             #+#    #+#             */
+/*   Updated: 2022/02/01 20:22:04 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main(int argc, char const *argv[])
+#include "Zombie.hpp"
+
+void    randomChump( std::string str )
 {
-	/* code */
-	return 0;
+    Zombie z(str);
+    z.announce();
 }
