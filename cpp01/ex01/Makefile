@@ -1,5 +1,5 @@
 NAME		= Moar_brainz!
-CXX			= clang++
+CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes
 SRCS		= main.cpp Zombie.cpp ZombieHorde.cpp

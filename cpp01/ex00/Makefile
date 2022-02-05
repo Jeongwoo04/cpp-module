@@ -1,5 +1,5 @@
 NAME		= BraiiiiiiinnnzzzZ
-CXX			= clang++
+CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes
 SRCS		= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
