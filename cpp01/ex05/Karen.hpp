@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 18:51:25 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/05 18:54:59 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/05 19:23:28 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ private:
 	void info( void );
 	void warning( void );
 	void error( void );
+	std::string str[4];
+	void (Karen::*p[4])(void);
 
 public:
 	Karen();
