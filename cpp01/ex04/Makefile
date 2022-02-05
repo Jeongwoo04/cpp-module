@@ -8,7 +8,7 @@ RM			= rm -f
 
 all		: $(NAME)
 
-$(OBJS)		: %.o:%.cpp
+$(OBJS)	: %.o:%.cpp
 	$(CXX) $(CXXFLAGS) $(INC) -c $< -o $@
 
 $(NAME)	: $(OBJS)
@@ -16,9 +16,11 @@ $(NAME)	: $(OBJS)
 
 clean	:
 	$(RM) $(OBJS)
+	$(RM) *.replace
 
 fclean	: clean
 	$(RM) $(NAME)
+	$(RM) *.replace
 
 re		: fclean all
 
