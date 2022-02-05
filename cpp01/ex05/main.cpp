@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 18:51:27 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/05 19:30:50 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/05 19:45:16 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ int	main( void )
 	karen.complain("INFO");
 	karen.complain("WARNING");
 	karen.complain("ERROR");
-	return (0);
 }
