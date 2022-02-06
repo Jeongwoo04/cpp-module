@@ -23,10 +23,8 @@ char	ft_toupper(char ch)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-
 	if (argc < 2)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	argv++;
 	while (*argv)
 	{
