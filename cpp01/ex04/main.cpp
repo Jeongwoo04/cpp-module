@@ -23,15 +23,14 @@ int	_error(std::string str)
 int main(int argc, char **argv)
 {
     std::string extend = ".replace";
-	// std::string str;
 	std::string	argv3;
 	std::string argv2;
-	// int	f_pos;
 	int idx;
 	char c;
 	std::string	origin;
 	std::string	replace;
 
+	// error control
     if (argc != 4)
         return (_error("wrong command"));
 	argv3 = argv[3];
@@ -39,6 +38,7 @@ int main(int argc, char **argv)
     if (argv2.empty() || argv3.empty())
         return (_error("s1 or s2 is empty"));
     std::ifstream fin(argv[1]);
+	// file open
 	if (!fin.is_open())
 		return (_error("file not open"));
 	std::ofstream fre(argv[1] + extend);
@@ -47,9 +47,11 @@ int main(int argc, char **argv)
 		fin.close();
 		return (_error("file not open"));
 	}
+	// parsing
 	while (fin.get(c))
 		origin += c;
 	idx = 0;
+	// change
 	while (origin.find(argv2, idx) != std::string::npos)
 	{
 		replace += origin.substr(idx, origin.find(argv2, idx) - idx);
@@ -57,27 +59,8 @@ int main(int argc, char **argv)
 		idx = origin.find(argv2, idx) + argv2.length();
 	}
 	replace += origin.substr(idx, origin.find(argv2, idx));
+	// make .replace
 	fre << replace;
-	// while (getline(fin, str))
-	// {
-	// 	if (str.find(argv2) != std::string::npos)
-	// 	{
-	// 		f_pos = 0;
-	// 		idx = 0;
-	// 		while (str.find(argv2, f_pos) != std::string::npos)
-	// 		{
-	// 			fre.write(&str[idx], str.find(argv2, f_pos) - idx);
-	// 			fre.write(&*argv[3], argv3.length());
-	// 			idx = str.find(argv2, f_pos) + argv2.length();
-	// 			f_pos = str.find(argv2, idx);
-	// 		}
-	// 		while (str[idx])
-	// 			fre.write(&str[idx++], 1);
-	// 	}
-	// 	else
-	// 		fre.write(str.c_str(), str.size());
-	// 	fre << std::endl;
-	// }
     fin.close();
 	fre.close();
     return (0);

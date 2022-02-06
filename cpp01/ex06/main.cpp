@@ -25,6 +25,9 @@ int	main( int argc, char **argv )
 	Karen karen;
 
 	for(int i = 1; i < argc; i++)
+	{
 		karen.complain(argv[i]);
+		std::cout << "----------------------------------------------------------------" << std::endl;
+	}
 	return (0);
 }

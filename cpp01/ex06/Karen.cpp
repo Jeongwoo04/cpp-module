@@ -56,9 +56,8 @@ void Karen::error( void )
 //
 void Karen::complain( std::string level )
 {
-	int i = 0;
+	int i = -1;
 
-	i = -1;
 	for (int idx = 0; idx < 4; idx++)
 	{
 		if (level == str[idx])
@@ -68,13 +67,10 @@ void Karen::complain( std::string level )
 	{
 		case DEBUG:
 			(this->*p[DEBUG])();
-			break ;
 		case INFO:
 			(this->*p[INFO])();
-			break ;
 		case WARNING:
 			(this->*p[WARNING])();
-			break ;
 		case ERROR:
 			(this->*p[ERROR])();
 			break ;
