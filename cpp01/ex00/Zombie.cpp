@@ -16,6 +16,7 @@ Zombie::Zombie()
 {
     name = "no name zombie";
     std::cout << name << std::endl;
+    std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 Zombie::Zombie( std::string str )

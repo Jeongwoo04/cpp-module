@@ -14,13 +14,11 @@
 #include <iostream>
 #include <time.h>
 
-//static 변수 초기화
-
+//static initialize;
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
-
 
 Account::Account( void )
 {
@@ -76,9 +74,9 @@ int	Account::getNbWithdrawals( void )
 	return (Account::_totalNbWithdrawals);
 }
 
+// std::cout << "[19920104_091532] ";
 void	Account::_displayTimestamp( void )
 {
-	// std::cout << "[19920104_091532] ";
 	time_t	curTime	= time(NULL);
 	struct	tm	*pLocal = localtime(&curTime);
 	char	curr[18];

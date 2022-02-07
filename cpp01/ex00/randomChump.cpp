@@ -14,6 +14,6 @@
 
 void    randomChump( std::string str )
 {
-    Zombie z(str);
+    Zombie z = Zombie(str);
     z.announce();
 }

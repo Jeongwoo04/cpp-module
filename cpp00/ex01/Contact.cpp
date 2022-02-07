@@ -25,6 +25,10 @@ Contact::Contact(std::string f, std::string l, std::string n, std::string p, std
 	secret = s;
 }
 
+Contact::~Contact()
+{
+}
+
 void	Contact::show_contact(int idx)
 {
 	std::string str;

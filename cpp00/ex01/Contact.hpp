@@ -29,6 +29,7 @@ private:
 public:
 	Contact();
 	Contact(std::string _first_name, std::string _last_name, std::string _nick_name, std::string _phnumber, std::string _secret);
+	~Contact();
 	void	show_contact(int idx);
 	void	show_detail(int idx);
 };

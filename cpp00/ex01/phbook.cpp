@@ -59,6 +59,7 @@ void	Phbook::search_choice(void)
 		stream.str(str);
 		while (stream >> i)
 		{
+			std::cout << i;
 			if (0 < i && i <= size)
 				arr[i - 1].show_detail(i);
 		}
