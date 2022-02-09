@@ -18,16 +18,16 @@ int	main(void)
 	ScavTrap	a("A");
 	ScavTrap	b("B");
 	
-	a.attack("b");
+	a.attack("B");
 	b.takeDamage(a.getDamage());
 
-	b.attack("a");
+	b.attack("A");
 	a.takeDamage(b.getDamage());
 
-	a.attack("b");
+	a.attack("B");
 	b.takeDamage(a.getDamage());
 
-	b.attack("a");
+	b.attack("A");
 	a.takeDamage(b.getDamage());
 
 	b.guardGate();

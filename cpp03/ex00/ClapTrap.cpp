@@ -23,6 +23,7 @@ ClapTrap::ClapTrap(const ClapTrap& claptrap)
 
 ClapTrap::~ClapTrap()
 {
+    std::cout << name << " : ClapTrap destructor is called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap)
