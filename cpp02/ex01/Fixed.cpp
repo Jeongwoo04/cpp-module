@@ -26,19 +26,21 @@ Fixed::Fixed()
 Fixed::Fixed(int i)
 {
 	std::cout << "Int constructor called" << std::endl;
+	val = i << frac_bits;
 }
 
 // Constructor float
 Fixed::Fixed(float f)
 {
 	std::cout << "Float constructor called" << std::endl;
+	val = roundf(f * (1 << frac_bits));
 }
 
 // Copy constructor
-Fixed::Fixed(const Fixed& origin)
+Fixed::Fixed(const Fixed& fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = origin;
+	*this = fixed;
 }
 
 // Destructor
@@ -51,7 +53,8 @@ Fixed::~Fixed()
 Fixed& Fixed::operator=(const Fixed& target)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	val = target.getRawBits();
+	if (this != &target)
+		val = target.getRawBits();
 	return (*this);
 }
 
@@ -70,10 +73,12 @@ void	Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
+	return ((float)val / (1 << frac_bits));
 }
 
 int	Fixed::toInt( void ) const
 {
+	return (val >> 8);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed)

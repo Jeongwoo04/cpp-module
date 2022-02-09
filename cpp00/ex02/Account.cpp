@@ -12,7 +12,7 @@
 
 #include "Account.hpp"
 #include <iostream>
-#include <time.h>
+#include <ctime>
 
 //static initialize;
 int	Account::_nbAccounts = 0;

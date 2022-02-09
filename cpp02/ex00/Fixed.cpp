@@ -23,10 +23,10 @@ Fixed::Fixed()
 }
 
 // Copy constructor
-Fixed::Fixed(const Fixed& origin)
+Fixed::Fixed(const Fixed& fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = origin;
+	*this = fixed;
 }
 
 // Destructor
@@ -39,7 +39,8 @@ Fixed::~Fixed()
 Fixed& Fixed::operator=(const Fixed& target)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	val = target.getRawBits();
+	if (this != &target)
+		val = target.getRawBits();
 	return (*this);
 }
 

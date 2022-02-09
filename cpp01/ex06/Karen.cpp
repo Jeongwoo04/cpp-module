@@ -76,5 +76,5 @@ void Karen::complain( std::string level )
 			break ;
 		default:
 			std::cout << "wrong option" << std::endl;
-	}
+	}	
 }

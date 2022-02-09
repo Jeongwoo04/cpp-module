@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 17:44:50 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/07 18:32:44 by jeson            ###   ########.fr       */
+/*   Created: 2022/02/07 17:44:56 by jeson             #+#    #+#             */
+/*   Updated: 2022/02/07 19:12:10 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Fixed.hpp"
+#include "Point.hpp"
 
-# include <iostream>
-# include <string>
+int main( void )
+{
+    Point a(0, 0);
+    Point b(5, 0);
+    Point c(2.5, 5);
+    Point d(3, 0.01);
 
-class	Fixed{
-private:
-	int	val;
-	static const int frac_bits;
-
-public:
-	Fixed();
-	Fixed(const Fixed& fixed);
-	~Fixed();
-	Fixed& operator=(const Fixed& fixed);
-
-	int getRawBits( void ) const;
-	void setRawBits(int const raw);
-};
-
-#endif
+    if (bsp(a, b, c, d))
+        std::cout << d << " is in the triangle !" << std::endl;
+    else
+        std::cout << d << " is out of triangle !" << std::endl;
+    
+    // std::cout << "hahahgogogo" << std::endl;
+    return 0;
+}

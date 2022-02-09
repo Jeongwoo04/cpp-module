@@ -1,8 +1,8 @@
-NAME		= My_First_Orthodox_Class
+NAME		= bsp
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes
-SRCS		= Fixed.cpp main.cpp
+SRCS		= Fixed.cpp Point.cpp bsp.cpp main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 

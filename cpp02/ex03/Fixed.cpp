@@ -11,48 +11,42 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
+// sibal;;
 // static initialize
 const int	Fixed::frac_bits = 8;
 
 // Default constructor
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
 	val = 0;
 }
 
 // Constructor const int
 Fixed::Fixed(int i)
 {
-	std::cout << "Int constructor called" << std::endl;
 	val = i << frac_bits;
 }
 
 // Constructor float
 Fixed::Fixed(float f)
 {
-	std::cout << "Float constructor called" << std::endl;
 	val = roundf(f * (1 << frac_bits));
 }
 
 // Copy constructor
 Fixed::Fixed(const Fixed& fixed)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
 
 // Destructor
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 // Assignation operator
 Fixed& Fixed::operator=(const Fixed& target)
 {
-	std::cout << "Assignation operator called" << std::endl;
 	val = target.getRawBits();
 	return (*this);
 }
@@ -60,7 +54,6 @@ Fixed& Fixed::operator=(const Fixed& target)
 // getfunc
 int	Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return ( val );
 }
 

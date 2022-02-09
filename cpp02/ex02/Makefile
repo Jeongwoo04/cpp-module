@@ -1,4 +1,4 @@
-NAME		=  My_First_Orthodox_Class
+NAME		= My_Third_Orthodox_Class
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes
