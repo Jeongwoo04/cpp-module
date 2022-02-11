@@ -28,11 +28,10 @@ ClapTrap::~ClapTrap()
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap)
 {
-    if (this != &claptrap)
-    {
-        *this = claptrap;
-        return (*this);
-    }
+	name = claptrap.name;
+	hitpoint = claptrap.hitpoint;
+	energy = claptrap.energy;
+	damage = claptrap.damage;
     return (*this);
 }
 

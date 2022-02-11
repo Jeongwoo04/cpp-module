@@ -5,7 +5,8 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+// base class "ClapTrap" is ambiguous
+class FragTrap : virtual public ClapTrap
 {
 public:
     FragTrap();
@@ -14,7 +15,7 @@ public:
     ~FragTrap();
 
     FragTrap& operator=(const FragTrap& fragtrap);
-    
+
     void attack(std::string const & target);
     void highFivesGuys( void );
 };

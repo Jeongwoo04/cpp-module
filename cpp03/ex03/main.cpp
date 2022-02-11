@@ -6,33 +6,40 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:44:56 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/07 18:38:45 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/11 17:46:46 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	FragTrap	a("A");
-	ScavTrap	b("B");
+	DiamondTrap	a("A");
 
-	a.attack("B");
-	b.takeDamage(a.getDamage());
+	a.whoAmI();
+	{
+		DiamondTrap b("B");
+		DiamondTrap c("C");
 
-	b.attack("A");
-	a.takeDamage(b.getDamage());
+		b.whoAmI();
+		c.whoAmI();
+		c.highFivesGuys();
 
-	a.attack("B");
-	b.takeDamage(a.getDamage());
+		b.attack("C");
+		c.takeDamage(b.getDamage());
 
-	b.attack("A");
-	a.takeDamage(b.getDamage());
+		b.attack("C");
+		c.takeDamage(b.getDamage());
 
-	b.guardGate();
+		b.guardGate();
+	}
+	DiamondTrap d;
 
-	a.highFivesGuys();
+	d.whoAmI();
+	d = a;
+	d.whoAmI();
 	return (0);
 }

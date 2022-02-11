@@ -31,12 +31,10 @@ ClapTrap::~ClapTrap()
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap)
 {
-    std::cout << name << " : ClapTrap operator is called" << std::endl;
-    if (this != &claptrap)
-    {
-        *this = claptrap;
-        return (*this);
-    }
+	name = claptrap.name;
+	hitpoint = claptrap.hitpoint;
+	energy = claptrap.energy;
+	damage = claptrap.damage;
     return (*this);
 }
 

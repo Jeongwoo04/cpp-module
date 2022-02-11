@@ -2,41 +2,45 @@
 
 ClapTrap::ClapTrap()
 {
-    name = "stranger";
-    hitpoint = 10;
-    energy = 10;
-    damage = 0;
-    std::cout << name << " : ClapTrap default constructor is called" << std::endl;
+	name = "stranger";
+	hitpoint = 10;
+	energy = 10;
+	damage = 0;
+	std::cout << "[ClapTrap]" << std::endl;
+	std::cout << name << " : ClapTrap default constructor is called" << std::endl;
 };
 
 ClapTrap::ClapTrap( std::string str )
 {
-    name = str;
-    hitpoint = 10;
-    energy = 10;
-    damage = 0;
-    std::cout << name << " : ClapTrap string constructor is called" << std::endl;
+	name = str;
+	hitpoint = 10;
+	energy = 10;
+	damage = 0;
+	std::cout << "[ClapTrap]" << std::endl;
+	std::cout << name << " : ClapTrap string constructor is called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& claptrap)
 {
-    *this = claptrap;
-    std::cout << name << " : ClapTrap copy constructor is called" << std::endl;
+	*this = claptrap;
+	std::cout << "[ClapTrap]" << std::endl;
+	std::cout << name << " : ClapTrap copy constructor is called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
+	std::cout << "[ClapTrap]" << std::endl;
     std::cout << name << " : ClapTrap destructor is called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap)
 {
+	std::cout << "[ClapTrap]" << std::endl;
     std::cout << name << " : ClapTrap operator is called" << std::endl;
-    if (this != &claptrap)
-    {
-        *this = claptrap;
-        return (*this);
-    }
+	name = claptrap.name;
+	hitpoint = claptrap.hitpoint;
+	energy = claptrap.energy;
+	damage = claptrap.damage;
     return (*this);
 }
 
@@ -63,13 +67,15 @@ void    ClapTrap::takeDamage(unsigned int amount)
 
 void    ClapTrap::beRepaired(unsigned int amount)
 {
-    std::cout << "[ClapTrap]" << std::endl;
     hitpoint += amount;
+    std::cout << "[ClapTrap]" << std::endl;
     std::cout << name << " is repaired " << amount << " points of heal! [HP] : " << hitpoint << std::endl;
 }
 
 unsigned int    ClapTrap::getDamage( void ) const
 {
+	std::cout << "[ClapTrap]" << std::endl;
+	std::cout << "ClapTrap's getDamage func is called" << std::endl;
     return ( damage );
 }
 

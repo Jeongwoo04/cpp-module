@@ -6,6 +6,7 @@ FragTrap::FragTrap()
     hitpoint = 100;
     energy = 100;
     damage = 30;
+	std::cout << "[FragTrap]" << std::endl;
     std::cout << name << " : FragTrap default constructor is called" << std::endl;
 };
 
@@ -15,28 +16,31 @@ FragTrap::FragTrap( std::string str )
     hitpoint = 100;
     energy = 100;
     damage = 30;
+	std::cout << "[FragTrap]" << std::endl;
     std::cout << name << " : FragTrap string constructor is called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& fragtrap)
 {
+	std::cout << "[FragTrap]" << std::endl;
     std::cout << name << " : FragTrap copy constructor is called" << std::endl;
     *this = fragtrap;
 }
 
 FragTrap::~FragTrap()
 {
+	std::cout << "[FragTrap]" << std::endl;
     std::cout << name << " : FragTrap destructor is called" << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& fragtrap)
 {
+	std::cout << "[FragTrap]" << std::endl;
     std::cout << name << " : FragTrap operator is called" << std::endl;
-    if (this != &fragtrap)
-    {
-        *this = fragtrap;
-        return (*this);
-    }
+	this->name = fragtrap.name;
+	this->hitpoint = fragtrap.hitpoint;
+	this->energy = fragtrap.energy;
+	this->damage = fragtrap.damage;
     return (*this);
 }
 
@@ -48,5 +52,6 @@ void    FragTrap::attack( std::string const& target )
 
 void	FragTrap::highFivesGuys(void)
 {
+	std::cout << "[FragTrap]" << std::endl;
 	std::cout << name << " : FragTrap is called positive high fives request" << std::endl;
 }

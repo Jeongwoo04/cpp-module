@@ -31,12 +31,10 @@ ScavTrap::~ScavTrap()
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& scavtrap)
 {
-    std::cout << name << " : ScavTrap operator is called" << std::endl;
-    if (this != &scavtrap)
-    {
-        *this = scavtrap;
-        return (*this);
-    }
+	name = scavtrap.name;
+	hitpoint = scavtrap.hitpoint;
+	energy = scavtrap.energy;
+	damage = scavtrap.damage;
     return (*this);
 }
 

@@ -2,7 +2,7 @@ NAME		= Repetitive_work
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes
-SRCS		= ClapTrap.cpp ScavTrap.cpp FragTrap.cpp Diamond.cpp main.cpp
+SRCS		= ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 
