@@ -6,6 +6,7 @@ Point::Point(): x(0), y(0)
 
 Point::Point(const Point& point): x(point.x), y(point.y)
 {
+	std::cout << "Point : (x, y) = (" << this->getX() << ", " << this->getY() << ")" << std::endl;
 }
 
 Point::Point(float const f1, float const f2): x(f1), y(f2)
@@ -22,12 +23,12 @@ Point&	Point::operator=(const Point& point)
     return (*this);
 }
 
-float   Point::getX( void ) const
+Fixed   Point::getX( void ) const
 {
     return ( x.toFloat() );
 }
 
-float   Point::getY( void ) const
+Fixed   Point::getY( void ) const
 {
     return ( y.toFloat() );
 }

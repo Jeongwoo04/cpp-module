@@ -17,8 +17,8 @@ public:
     Point( float const f1, float const f2 );
 	~Point();
     Point&	operator=( const Point& point );
-    float   getX( void ) const;
-    float   getY( void ) const;
+    Fixed   getX( void ) const;
+    Fixed   getY( void ) const;
 };
 
 std::ostream& operator<<( std::ostream& os, const Point& point );
