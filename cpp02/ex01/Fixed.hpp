@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:44:50 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/07 19:12:44 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/12 11:01:12 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ private:
 
 public:
 	Fixed();
-	Fixed(int i);
-	Fixed(float f);
+	Fixed(const int i);
+	Fixed(const float f);
 	Fixed(const Fixed& fixed);
 	~Fixed();
 	Fixed& operator=(const Fixed& fixed);

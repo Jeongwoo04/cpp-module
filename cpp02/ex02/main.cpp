@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:44:56 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/12 10:42:06 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/12 10:58:27 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ Fixed a;
 Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) ); // Fixed( 5.05f ) & Fixed ( 2 ) destructed
 
 std::cout << a << std::endl;// 0
-std::cout << ++a << std::endl;// 0.00390625
+std::cout << ++a << std::endl;// 0.00390625 = 1 / ( 1 << frac_bits ) = 1 / 256
 std::cout << a << std::endl;// 0.00390625
 std::cout << a++ << std::endl;// 0.00390625
-std::cout << a << std::endl;// 0.0078125
+std::cout << a << std::endl;// 0.0078125 = 0.00390625 * ( 1 << frac_bits ) + 1 / ( 1 << frac_bits ) = 2 / 256
 // a++; // operator++(int) tmp destructed
 
 std::cout << b << std::endl;// 10.1016

@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:44:54 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/12 10:36:06 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/12 11:04:53 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ Fixed::Fixed()
 	val = 0;
 }
 
-// Constructor const int
-Fixed::Fixed(int i)
+// int Constructor takes constant integer
+Fixed::Fixed(const int i)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->val = i << frac_bits;
 }
 
-// Constructor float
-Fixed::Fixed(float f)
+// float Constructor takes constant floating point
+Fixed::Fixed(const float f)
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->val = roundf(f * (1 << frac_bits));

@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:44:54 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/07 19:13:16 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/12 11:05:44 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ Fixed::Fixed()
 	val = 0;
 }
 
-// Constructor const int
-Fixed::Fixed(int i)
+// int Constructor takes const integer
+Fixed::Fixed(const int i)
 {
 	val = i << frac_bits;
 }
 
-// Constructor float
-Fixed::Fixed(float f)
+// int Constructor takes floating point
+Fixed::Fixed(const float f)
 {
 	val = roundf(f * (1 << frac_bits));
 }
