@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:44:56 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/11 17:46:46 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/12 14:35:54 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,46 @@
 int	main(void)
 {
 	DiamondTrap	a("A");
+	std::cout << std::endl;
+	DiamondTrap b("B");
+	std::cout << std::endl;
+	DiamondTrap c("C");
+	std::cout << std::endl;
 
 	a.whoAmI();
-	{
-		DiamondTrap b("B");
-		DiamondTrap c("C");
+	b.whoAmI();
+	c.whoAmI();
+	std::cout << std::endl;
 
-		b.whoAmI();
-		c.whoAmI();
-		c.highFivesGuys();
+	a.highFivesGuys();
+	b.highFivesGuys();
+	c.highFivesGuys();
+	std::cout << std::endl;
 
-		b.attack("C");
-		c.takeDamage(b.getDamage());
+	a.attack("B");
+	b.takeDamage(a.getDamage());
+	std::cout << std::endl;
 
-		b.attack("C");
-		c.takeDamage(b.getDamage());
+	b.attack("C");
+	c.takeDamage(b.getDamage());
+	std::cout << std::endl;
 
-		b.guardGate();
-	}
+	c.attack("A");
+	a.takeDamage(c.getDamage());
+	std::cout << std::endl;
+
+	a.guardGate();
+	b.guardGate();
+	c.guardGate();
+	std::cout << std::endl;
+
 	DiamondTrap d;
-
 	d.whoAmI();
+	std::cout << std::endl;
+
 	d = a;
 	d.whoAmI();
+	std::cout << std::endl;
+	// d = a -> d (default con -> assign a) -> A destuctors called
 	return (0);
 }

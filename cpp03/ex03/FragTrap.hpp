@@ -6,7 +6,7 @@
 # include "ClapTrap.hpp"
 
 // base class "ClapTrap" is ambiguous
-class FragTrap : virtual public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 public:
     FragTrap();
