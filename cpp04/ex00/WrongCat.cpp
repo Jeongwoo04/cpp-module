@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 17:19:12 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/14 12:33:39 by jeson            ###   ########.fr       */
+/*   Created: 2022/02/14 13:24:18 by jeson             #+#    #+#             */
+/*   Updated: 2022/02/14 13:24:19 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog()
+WrongCat::WrongCat()
 {
-	std::cout << "Dog default constructor is called" << std::endl;
-	this->type = "Dog";
+	std::cout << "WrongCat default constructor is called" << std::endl;
+	this->type = "WrongCat";
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	std::cout << "Dog destructor is called" << std::endl;
+	std::cout << "WrongCat destructor is called" << std::endl;
 }
 
-Dog::Dog(const Dog& src)
+WrongCat::WrongCat(const WrongCat& src)
 {
 	type = src.getType();
-	std::cout << "Dog copy constuctor is called" << std::endl;
+	std::cout << "WrongCat copy constuctor is called" << std::endl;
 }
 
-Dog&	Dog::operator=(const Dog& src)
+WrongCat&	WrongCat::operator=(const WrongCat& src)
 {
-	std::cout << "Dog assign is called" << std::endl;
+	std::cout << "WrongCat assign is called" << std::endl;
 	this->type = src.getType();
 	return (*this);
 }
 
 // std::string	getType( void )const;
 
-void	Dog::makeSound( void )const
+void	WrongCat::makeSound( void )const
 {
-	std::cout << " - Dog sound - " << std::endl;
+	std::cout << " - WrongCat sound - " << std::endl;
 }
