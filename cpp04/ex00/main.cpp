@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:03:42 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/14 13:33:54 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/14 14:48:10 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 int	main( void )
 {
 	{
-		Animal* animal = new Animal();
-		Animal* dog = new Dog();
-		Animal* cat = new Cat();
+		const Animal* animal = new Animal();
+		const Animal* dog = new Dog();
+		const Animal* cat = new Cat();
 
 		std::cout << std::endl;
 
