@@ -1,10 +1,10 @@
-NAME		=
-CXX			= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
-INC			= -I includes
-SRCS		= main.cpp
-OBJS		= $(SRCS:.cpp=.o)
-RM			= rm -f
+NAME		=	Animal
+CXX			=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+INC			=	-I includes
+SRCS		=	Animal.cpp Dog.cpp Cat.cpp Brain.cpp main.cpp
+OBJS		=	$(SRCS:.cpp=.o)
+RM			=	rm -f
 
 all		: $(NAME)
 

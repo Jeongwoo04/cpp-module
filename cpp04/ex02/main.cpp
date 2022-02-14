@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:03:42 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/14 17:10:36 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/14 17:58:32 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ int	main( void )
 		else
 			animal[i] = new Cat();
 		std::cout << "animal [ " << i << " ] created. type : " << animal[i]->getType() << std::endl;
+		std::cout << "animal's sound is ";
+		animal[i]->makeSound();
+		std::cout << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -65,7 +68,7 @@ int	main( void )
 	std::cout << std::endl;
 	printf_cat_ideas(cat);
 
-	std::cout << "\ncopy ->\n" << std::endl;
+	std::cout << "\n [ copy ] cp_animal = animal\n" << std::endl;
 	Dog cp_dog = dog;
 	Cat cp_cat = cat;
 	std::cout << std::endl;
