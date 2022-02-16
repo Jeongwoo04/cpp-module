@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:03:42 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/14 18:01:37 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/16 21:21:22 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,23 +58,24 @@ int	main( void )
 	std::string ideas1[3] = {"42", "hello", "world"};
 	std::string ideas2[4] = {"42", "hello", "gaepo", "world"};
 
-	Dog dog = Dog();
+	Dog *dog = new Dog();
 	std::cout << std::endl;
-	Cat cat = Cat();
+	Cat *cat = new Cat();
 	std::cout << std::endl;
-	dog.setBrainIdeas( ideas1, 3 );
-	cat.setBrainIdeas( ideas2, 4 );
-	printf_dog_ideas(dog);
+	dog->setBrainIdeas( ideas1, 3 );
+	cat->setBrainIdeas( ideas2, 4 );
+	dog->printf_dog_ideas();
 	std::cout << std::endl;
-	printf_cat_ideas(cat);
+	cat->printf_cat_ideas();
 
 	std::cout << "\n [ copy ] cp_animal = animal\n" << std::endl;
-	Dog cp_dog = dog;
-	Cat cp_cat = cat;
+
+	Dog cp_dog = *dog;
+	Cat cp_cat = *cat;
 	std::cout << std::endl;
-	printf_dog_ideas(cp_dog);
+	cp_dog.printf_dog_ideas();
 	std::cout << std::endl;
-	printf_cat_ideas(cp_cat);
+	cp_cat.printf_cat_ideas();
 	std::cout << std::endl;
 	return ( 0 );
 }

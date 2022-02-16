@@ -1,8 +1,9 @@
-NAME		=
+NAME		= ex03
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes
-SRCS		= main.cpp
+SRCS		= AMateria.cpp Character.cpp Cure.cpp \
+				Ice.cpp MateriaSource.cpp main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 

@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:19:12 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/14 17:00:09 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/16 21:13:19 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,13 @@ std::string*	Dog::getBrainIdeas( void )
 int	Dog::getBrainSize( void )
 {
 	return ( brain->getSize() );
+}
+
+void	Dog::printf_dog_ideas( void )
+{
+	std::string*	dog_ideas = this->getBrainIdeas();
+	int	size = this->getBrainSize();
+
+	for (int i = 0; i < size; i++)
+		std::cout << "ideas[ "<< i << " ] : "<< dog_ideas[i] << std::endl;
 }

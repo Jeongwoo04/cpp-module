@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:18:45 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/14 18:02:12 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/16 21:18:13 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	void	setBrainIdeas( std::string *ideas, int size );
 	std::string*	getBrainIdeas( void );
 	int	getBrainSize( void );
+	void	printf_cat_ideas( void );
 };
 
 #endif

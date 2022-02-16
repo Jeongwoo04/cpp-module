@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:38:42 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/14 17:02:40 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/16 21:12:47 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,13 @@ std::string*	Cat::getBrainIdeas( void )
 int	Cat::getBrainSize( void )
 {
 	return ( brain->getSize() );
+}
+
+void	Cat::printf_cat_ideas( void )
+{
+	std::string*	cat_ideas = this->getBrainIdeas();
+	int	size = this->getBrainSize();
+
+	for (int i = 0; i < size; i++)
+		std::cout << "ideas[ "<< i << " ] : "<< cat_ideas[i] << std::endl;
 }
