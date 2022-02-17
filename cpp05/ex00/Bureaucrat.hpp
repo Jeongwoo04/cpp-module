@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 15:26:25 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/15 18:33:32 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 14:40:53 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public:
 		public:
 			const char* what( void ) const throw();
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 		public:
