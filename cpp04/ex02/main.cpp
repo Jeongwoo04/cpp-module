@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:03:42 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/17 11:34:18 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 13:25:23 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,20 @@ int	main( void )
 	std::string ideas1[3] = {"42", "hello", "world"};
 	std::string ideas2[4] = {"42", "hello", "gaepo", "world"};
 
-	Dog *dog = new Dog();
+	Dog dog = Dog();
 	std::cout << std::endl;
-	Cat *cat = new Cat();
+	Cat cat = Cat();
 	std::cout << std::endl;
-	dog->setBrainIdeas( ideas1, 3 );
-	cat->setBrainIdeas( ideas2, 4 );
-	dog->printf_dog_ideas();
+	dog.setBrainIdeas( ideas1, 3 );
+	cat.setBrainIdeas( ideas2, 4 );
+	dog.printf_dog_ideas();
 	std::cout << std::endl;
-	cat->printf_cat_ideas();
+	cat.printf_cat_ideas();
 
 	std::cout << "\n [ copy ] cp_animal = animal\n" << std::endl;
 
-	Dog cp_dog = *dog;
-	Cat cp_cat = *cat;
+	Dog cp_dog = dog;
+	Cat cp_cat = cat;
 	std::cout << std::endl;
 	cp_dog.printf_dog_ideas();
 	std::cout << std::endl;
