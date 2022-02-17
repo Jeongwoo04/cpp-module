@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:38:42 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/16 21:17:57 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 11:24:56 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Cat::Cat(const Cat& src)
 {
 	std::cout << "Cat copy constuctor is called" << std::endl;
 	this->type = src.getType();
+	this->brain = NULL;
 	this->brain = new Brain();
 	// this->brain = src.brain;
 	setBrainIdeas( src.brain->getIdeas(), src.brain->getSize() );
