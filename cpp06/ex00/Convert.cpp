@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:51:13 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 16:07:14 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/19 16:14:06 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,8 @@ void	Convert::printToInt( void ) const
 
 	try
 	{
-		if (std::isnan(val) || std::isinf(val) || \
-			val > std::numeric_limits<int>::max() || \
+		if (std::isnan(val) || std::isinf(val) ||
+			val > std::numeric_limits<int>::max() ||
 			val < std::numeric_limits<int>::min())
 			throw( impossibleException() );
 		else
@@ -135,8 +135,8 @@ void	Convert::printToFloat( void ) const
 
 	try
 	{
-		if (!(std::isnan(val) || std::isinf(val)) && \
-			(val > std::numeric_limits<float>::max() || \
+		if (!(std::isnan(val) || std::isinf(val)) &&
+			(val > std::numeric_limits<float>::max() ||
 			val < std::numeric_limits<float>::max() * -1))
 			throw ( impossibleException() );
 		else

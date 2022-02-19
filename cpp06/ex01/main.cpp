@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:10:21 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 16:38:36 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/19 17:31:52 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main( void )
 	Data* deser;
 
 	std::cout << "========== Data d ==========" << std::endl;
+	std::cout << "Data's Address = " << &d << std::endl;
 	std::cout << "Name : " << d.name << ", Grade : " << d.grade << std::endl;
 	std::cout << std::endl;
 
@@ -54,7 +55,7 @@ int	main( void )
 	deser = deserialize(ser);
 	std::cout << "Deserialized Address = " << deser << std::endl;
 	std::cout << "Name : " << d.name << ", Grade : " << d.grade << std::endl;
-	std::cout << "========== finish ==========" << std::endl;
+	std::cout << "\n========== finish ==========" << std::endl;
 
 	return ( 0 );
 }
