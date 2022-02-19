@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:12:19 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 22:58:17 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/19 23:19:51 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,34 +33,59 @@ int	main( void )
 		std::cout << "\na size : " << a.getN() << std::endl;
 		std::cout << "b size : " << b.getN() << std::endl << std::endl;
 
-		for (i = 0; i < 5; i++)
-			b[i] = i + 1;
-
-		std::cout << "b : ";
-		for (i = 0; i < 5; i++)
-			std::cout << b[i] << " ";
+		std::cout << "a : ";
+		if ( !a.getN() )
+			std::cout << "{}";
+		for (i = 0; i < a.getN(); i++)
+		{
+			a[i] = i + 1;
+			std::cout << a[i];
+			if ( i + 1 == a.getN() )
+				std::cout << "}";
+			else
+				std::cout << ", ";
+		}
 		std::cout << "\n\n";
 
-		Array<int> c(b);
 		Array<int> d;
 		d = b;
 
-		for (i = 0; i < 5; i++)
-			b[i] = 9;
-
-		std::cout << "b : ";
-		for (i = 0; i < 5; i++)
-			std::cout << b[i] << " ";
-		std::cout << "\n\n";
-		std::cout << "c : ";
-		for (i = 0; i < 5; i++)
-			std::cout << c[i] << " ";
-		std::cout << "\n\n";
-		std::cout << "d : ";
-		for (i = 0; i < 5; i++)
-			std::cout << d[i] << " ";
+		std::cout << "b : {";
+		for (i = 0; i < b.getN(); i++)
+		{
+			b[i] = 3;
+			std::cout << b[i];
+			if ( i + 1 == b.getN() )
+				std::cout << "}";
+			else
+				std::cout << ", ";
+		}
 		std::cout << "\n\n";
 
+		Array<int> c(b);
+		std::cout << "c : {";
+		for (i = 0; i < c.getN(); i++)
+		{
+			std::cout << c[i];
+			if ( i + 1 == c.getN() )
+				std::cout << "}";
+			else
+				std::cout << ", ";
+		}
+		std::cout << "\n\n";
+
+		std::cout << "d : {";
+		for (i = 0; i < d.getN(); i++)
+		{
+			std::cout << d[i];
+			if ( i + 1 == d.getN() )
+				std::cout << "}";
+			else
+				std::cout << ", ";
+		}
+		std::cout << "\n\n";
+
+		std::cout << "======= out of range example =======\n" << std::endl;
 		try
 		{
 			b[7] = 9;
@@ -71,21 +96,28 @@ int	main( void )
 		}
 
 	}
-	std::cout << "---------------------------------------" << std::endl;
+	std::cout << "\n====================================\n" << std::endl;
 	{
+		std::cout << "===== string =====\n" << std::endl;
 		Array<std::string> a;
 		Array<std::string> b(3);
 
-		std::cout << "a size: " << a.getN() << std::endl;
-		std::cout << "b size: " << b.getN() << std::endl << std::endl;
+		std::cout << "a size : " << a.getN() << std::endl;
+		std::cout << "b size : " << b.getN() << std::endl << std::endl;
 
 		b[0] = "aa";
 		b[1] = "bb";
 		b[2] = "cc";
 
-		std::cout << "b : ";
-		for (i = 0; i < 3; i++)
-			std::cout << b[i] << " ";
+		std::cout << "b : {";
+		for (i = 0; i < b.getN(); i++)
+		{
+			std::cout << b[i];
+			if ( i + 1 == b.getN() )
+				std::cout << "}";
+			else
+				std::cout << ", ";
+		}
 		std::cout << "\n\n";
 
 		Array<std::string> c(b);
@@ -96,19 +128,40 @@ int	main( void )
 		b[1] = "@@";
 		b[2] = "@@";
 
-		std::cout << "b : ";
-		for (i = 0; i < 3; i++)
-			std::cout << b[i] << " ";
-		std::cout << "\n\n";
-		std::cout << "c : ";
-		for (i = 0; i < 3; i++)
-			std::cout << c[i] << " ";
-		std::cout << "\n\n";
-		std::cout << "d : ";
-		for (i = 0; i < 3; i++)
-			std::cout << d[i] << " ";
+		std::cout << "b : {";
+		for (i = 0; i < b.getN(); i++)
+		{
+			std::cout << b[i];
+			if ( i + 1 == b.getN() )
+				std::cout << "}";
+			else
+				std::cout << ", ";
+		}
 		std::cout << "\n\n";
 
+		std::cout << "c : {";
+		for (i = 0; i < c.getN(); i++)
+		{
+			std::cout << c[i];
+			if ( i + 1 == c.getN() )
+				std::cout << "}";
+			else
+				std::cout << ", ";
+		}
+		std::cout << "\n\n";
+
+		std::cout << "d : {";
+		for (i = 0; i < d.getN(); i++)
+		{
+			std::cout << d[i];
+			if ( i + 1 == d.getN() )
+				std::cout << "}";
+			else
+				std::cout << ", ";
+		}
+		std::cout << "\n\n";
+
+		std::cout << "======= out of range example =======\n" << std::endl;
 		try
 		{
 			b[7] = "@@";
