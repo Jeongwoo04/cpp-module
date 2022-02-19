@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:12:27 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 19:12:28 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/19 22:54:07 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,104 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+# include <string>
+# include <iostream>
+# include <exception>
 
+template <typename T>
+class Array
+{
+private:
+	unsigned int n;
+	T	*arr;
+public:
+	Array();
+	Array( unsigned int n );
+	Array( const Array& src );
+	~Array();
+
+	Array& operator=( const Array& src );
+	T& operator[]( unsigned int n ) const ;
+
+	unsigned int	getN( void ) const;
+
+	class OutOfRangeException: public std::exception
+	{
+	public:
+		const char *what( void ) const throw();
+	};
+};
+
+template <typename T>
+Array<T>::Array(): n(0), arr(NULL)
+{
+}
+
+template <typename T>
+Array<T>::Array( unsigned int n ): n(0), arr(NULL)
+{
+	this->n = n;
+	if (n)
+		arr = new T[n];
+}
+
+template <typename T>
+Array<T>::Array( const Array& src ): n(0), arr(NULL)
+{
+	this->n = src.getN();
+	if (n)
+		arr = new T[n];
+	for (unsigned int i = 0; i < n; i++)
+		arr[i] = src.arr[i];
+}
+
+template <typename T>
+Array<T>::~Array()
+{
+	if (arr)
+	{
+		delete [] arr;
+		arr = NULL;
+	}
+}
+
+template <typename T>
+Array<T>&	Array<T>::operator=( const Array& src )
+{
+	if ( this == &src )
+		return ( *this );
+	if ( arr )
+	{
+		delete [] arr;
+		arr = NULL;
+	}
+	this->n = src.getN();
+	if (n)
+		arr = new T[n];
+	for (unsigned int i = 0; i < n; i++)
+		this->arr[i] = src.arr[i];
+	return ( *this );
+}
+
+template <typename T>
+T&	Array<T>::operator[]( unsigned int n ) const
+{
+	if ( n >= this->n )
+		throw ( OutOfRangeException() );
+	return ( arr[n] );
+}
+
+template <typename T>
+unsigned int	Array<T>::getN( void ) const
+{
+	return ( this->n );
+}
+
+template <typename T>
+const char*	Array<T>::OutOfRangeException::what( void ) const throw()
+{
+	return ("Out of range Exception.");
+}
 
 // Construction with no parameter: creates an empty array.
 // • Construction with an unsigned int n as a parameter: creates an array of n elements, initialized by default. (Tip: try to compile int * a = new int();, then
