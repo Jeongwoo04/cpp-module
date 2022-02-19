@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 12:32:32 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/16 21:33:27 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 10:46:48 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ Character::Character(const Character& src)
 	this->name = src.getName();
 	for (int i = 0; i < 4; i++)
 	{
-		if (src.inven[i])
-			this->inven[i] = src.inven[i];
-		else
+		if (this->inven[i])
+		{
+			delete this->inven[i];
 			this->inven[i] = NULL;
+		}
+		if (src.inven[i])
+			this->inven[i] = src.inven[i]->clone();
 	}
 	std::cout << "Copy " << src.getName() << std::endl;
 }
@@ -42,7 +45,10 @@ Character::Character(const Character& src)
 Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
+	{
 		delete inven[i];
+		inven[i] = NULL;
+	}
 	std::cout << this->name << " : Destructor is called" << std::endl;
 }
 
@@ -52,7 +58,15 @@ Character&	Character::operator=(const Character& src)
 		return ( *this );
 	this->name = src.getName();
 	for (int i = 0; i < 4; i++)
-		this->inven[i] = src.inven[i];
+	{
+		if (this->inven[i])
+		{
+			delete this->inven[i];
+			this->inven[i] = NULL;
+		}
+		if (src.inven[i])
+			this->inven[i] = src.inven[i]->clone();
+	}
 	return ( *this );
 }
 

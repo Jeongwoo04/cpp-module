@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 12:37:08 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/15 15:04:09 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 10:55:33 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,25 @@ MateriaSource::MateriaSource()
 MateriaSource::MateriaSource(const MateriaSource& src)
 {
 	for (int i = 0; i < 4; i++)
-		this->inven[i] = src.inven[i];
+	{
+		if (this->inven[i])
+		{
+			delete this->inven[i];
+			this->inven[i] = NULL;
+		}
+		if (src.inven[i])
+			this->inven[i] = src.inven[i]->clone();
+	}
 	std::cout << "MateriaSource's copy constructor is called" << std::endl;
 }
 
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
+	{
 		delete inven[i];
+		this->inven[i] = NULL;
+	}
 	std::cout << "MateriaSource's destructor is called" << std::endl;
 }
 
@@ -52,6 +63,8 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& src)
 
 void	MateriaSource::learnMateria(AMateria* m)
 {
+	if (!m)
+		return ;
 	for (int i = 0; i < 4; i++)
 	{
 		if (inven[i] == NULL)

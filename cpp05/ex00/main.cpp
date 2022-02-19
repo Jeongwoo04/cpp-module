@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 15:23:04 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/16 21:44:55 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 14:40:36 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,22 @@ int	main( void )
 	{
 		std::cerr << "bob's grade is 0 good" << std::endl;
 	}
+
+	// try
+	// {
+	// 	Bureaucrat bur("bob", 4);
+	// 	std::cout << bur;
+	// 	for (int i = 0; i < 10; i++)
+	// 	{
+	// 		bur.incrementGrade();
+	// 		std::cout << bur;
+	// 	}
+	// }
+	// // exception is not integer
+	// catch(int i)
+	// {
+	// 	std::cerr << "bob's grade is 0 good" << std::endl;
+	// }
+
 	return ( 0 );
 }

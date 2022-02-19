@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 17:19:12 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/16 21:17:25 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 11:25:09 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Dog::Dog(const Dog& src)
 {
 	std::cout << "Dog copy constuctor is called" << std::endl;
 	this->type = src.getType();
+	this->brain = NULL;
 	this->brain = new Brain();
 	// this->brain = src.brain;
 	setBrainIdeas( src.brain->getIdeas(), src.brain->getSize() );

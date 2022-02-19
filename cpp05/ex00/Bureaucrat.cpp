@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 15:26:51 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/15 22:18:12 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 14:41:08 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& src)
 {
 	if (this == &src)
 		return (*this);
-	(*const_cast<std::string *>(&this->name)) = src.getName();
+	*(const_cast<std::string *>(&this->name)) = src.getName();
 	this->grade = src.getGrade();
 	return (*this);
 }

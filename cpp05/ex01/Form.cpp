@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 21:58:07 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/16 21:52:52 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/17 14:42:15 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ void	Form::beSigned(const Bureaucrat& src)
 
 const char*	Form::GradeTooHighException::what( void ) const throw()
 {
-	return ( "Grade too high" );
+	return ( "grade too high" );
 }
 
 const char*	Form::GradeTooLowException::what( void ) const throw()
 {
-	return ( "Grade too low" );
+	return ( "grade too low" );
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& src)
