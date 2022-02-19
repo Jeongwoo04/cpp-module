@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:51:13 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 15:59:48 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/19 16:07:14 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ const char* Convert::invalidInputException::what( void ) const throw()
 	return ("Exception: invalid input.");
 }
 
-const char* Convert::limitsExceedException::what( void ) const throw()
+const char* Convert::impossibleException::what( void ) const throw()
 {
-	return ("Exception: limits exceed value.");
+	return ("impossible");
 }
 
-const char* Convert::isNotPrintableException::what( void ) const throw()
+const char* Convert::nonDisplayableException::what( void ) const throw()
 {
-	return ("Exception: is not printable.");
+	return ("Non displayable");
 }
 
 void	Convert::printToChar( void ) const
@@ -91,14 +91,14 @@ void	Convert::printToChar( void ) const
 		if (std::isnan(val) || std::isinf(val) || \
 			val > std::numeric_limits<char>::max() || \
 			val < std::numeric_limits<char>::min())
-			throw ( limitsExceedException() );
+			throw ( impossibleException() );
 		else
 		{
 			char c = static_cast<char>(val);
 			if (std::isprint(c))
 				std::cout << "'" << c << "'" << std::endl;
 			else
-				throw ( isNotPrintableException() );
+				throw ( nonDisplayableException() );
 		}
 	}
 	catch( std::exception& e )
@@ -116,7 +116,7 @@ void	Convert::printToInt( void ) const
 		if (std::isnan(val) || std::isinf(val) || \
 			val > std::numeric_limits<int>::max() || \
 			val < std::numeric_limits<int>::min())
-			throw( limitsExceedException() );
+			throw( impossibleException() );
 		else
 		{
 			int i = static_cast<int>(val);
@@ -138,7 +138,7 @@ void	Convert::printToFloat( void ) const
 		if (!(std::isnan(val) || std::isinf(val)) && \
 			(val > std::numeric_limits<float>::max() || \
 			val < std::numeric_limits<float>::max() * -1))
-			throw ( limitsExceedException() );
+			throw ( impossibleException() );
 		else
 		{
 			float f = static_cast<float>(val);

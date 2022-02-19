@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:50:25 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 15:58:41 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/19 16:06:35 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ public:
 		const char* what ( void ) const throw();
 	};
 
-	class limitsExceedException : public std::exception
+	class impossibleException : public std::exception
 	{
 	public:
 		const char* what ( void ) const throw();
 	};
 
-	class isNotPrintableException : public std::exception
+	class nonDisplayableException : public std::exception
 	{
 	public:
 		const char* what ( void ) const throw();
