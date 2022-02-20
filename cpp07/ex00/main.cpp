@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 17:16:21 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 19:16:39 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/20 14:04:29 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,14 @@ int	main( void )
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	// return ( 0 );
+	char e = 'e';
+	char f = 'f';
+	std::cout << "e = " << e << ", f = " << f << std::endl;
+	::swap(e, f);
+	std::cout << "swap( e, f )" << std::endl;
+	std::cout << "e = " << e << ", f = " << f << std::endl;
+	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
+	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
 	return ( 0 );
 }
