@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:40:52 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/20 13:59:20 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/20 20:22:14 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ Base* generate(void)
 		case 1:
 			return new B();
 		case 2:
-			return NULL;
-			// return new C();
+			// return NULL;
+			return new C();
 		default:
 			return (NULL);
 	}

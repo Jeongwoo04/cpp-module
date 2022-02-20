@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:51:13 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/20 11:57:21 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/20 20:18:51 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,11 +144,15 @@ void	Convert::printToFloat( void ) const
 		if (std::isinf(val))
 			std::cout << std::showpos;
 		float f = static_cast<float>(val);
-		if (f == static_cast<int>(f))
+		int	i = static_cast<int>(val);
+		if (i == f && (val >= INT32_MIN && val <= INT32_MAX))
+		{
+			std::cout << std::setprecision(10);
 			std::cout << f << ".0f" << std::endl;
+		}
 		else
 		{
-			std::cout << std::setprecision(std::numeric_limits<float>::digits10);
+			std::cout << std::setprecision(10);
 			std::cout << f << "f" << std::endl;
 		}
 	}
@@ -162,11 +166,15 @@ void	Convert::printToDouble( void ) const
 {
 	std::cout << "double: ";
 
-	if (val == static_cast<int>(val))
+	int	i = static_cast<int>(val);
+	if (i == val && (i >= INT32_MIN && i <= INT32_MAX))
+	{
+		std::cout << std::setprecision(10);
 		std::cout << val << ".0" << std::endl;
+	}
 	else
 	{
-		std::cout << std::setprecision(std::numeric_limits<double>::digits10);
+		std::cout << std::setprecision(10);
 		std::cout << val << std::endl;
 	}
 }
@@ -180,4 +188,3 @@ void	Convert::printf( void ) const
 	printToFloat();
 	printToDouble();
 }
-
