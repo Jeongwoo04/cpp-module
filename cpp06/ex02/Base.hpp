@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:40:05 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 17:14:34 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/20 13:24:46 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ class C : public Base
 Base* generate(void);
 void identify(Base* p);
 void identify(Base& p);
+bool is_null(Base& p);
 
 #endif

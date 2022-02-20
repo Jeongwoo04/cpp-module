@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:40:52 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 19:09:23 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/20 13:28:07 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ Base* generate(void)
 		case 1:
 			return new B();
 		case 2:
+			// return NULL;
 			return new C();
+		default:
+			return (NULL);
 	}
-	return (NULL);
 }
 
 // that displays "A", "B" or "C" according to the real type of p.
@@ -57,6 +59,11 @@ void	identify(Base& p)
 {
 	Base tmp;
 
+	if (is_null(p))
+	{
+		std::cout << "Unknown type" << std::endl;
+		return ;
+	}
 	try
 	{
 		tmp = dynamic_cast<A&>(p);
@@ -87,4 +94,13 @@ void	identify(Base& p)
 	{
 	}
 	std::cout << "Unknown type" << std::endl;
+}
+
+bool	is_null(Base& p)
+{
+	Base* tmp;
+	tmp = &p;
+	if (tmp == NULL)
+		return (true);
+	return (false);
 }
