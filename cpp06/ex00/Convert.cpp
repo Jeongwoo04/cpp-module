@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:51:13 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/20 11:36:46 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/20 11:57:21 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ Convert::Convert(std::string input): _err(false), val(0.0)
 	{
 		if (errno == ERANGE)
 			throw( errnoErangeException() );
-		if (!std::isdigit(input[0]) && (input[0] == '+' || input[0] == '-') && val == 0.0 )
+		// ex) d1
+		if (!std::isdigit(input[0]) && !(input[0] == '+' || input[0] == '-') && val == 0.0 )
 			throw( invalidInputException() );
+		// ex) 42.12ff
 		if (!(*eptr == 0 || std::string(eptr) == "f"))
 			throw( invalidInputException() );
 	}
@@ -152,7 +154,7 @@ void	Convert::printToFloat( void ) const
 	}
 	catch( std::exception& e )
 	{
-		std::cout << e.what() << std::cout;
+		std::cout << e.what() << std::endl;
 	}
 }
 
