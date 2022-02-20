@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:51:13 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 16:14:06 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/20 11:36:46 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,16 +139,15 @@ void	Convert::printToFloat( void ) const
 			(val > std::numeric_limits<float>::max() ||
 			val < std::numeric_limits<float>::max() * -1))
 			throw ( impossibleException() );
+		if (std::isinf(val))
+			std::cout << std::showpos;
+		float f = static_cast<float>(val);
+		if (f == static_cast<int>(f))
+			std::cout << f << ".0f" << std::endl;
 		else
 		{
-			float f = static_cast<float>(val);
-			if (f == static_cast<int>(f))
-				std::cout << f << ".0f" << std::endl;
-			else
-			{
-				std::cout << std::setprecision(std::numeric_limits<float>::digits10);
-				std::cout << f << "f" << std::endl;
-			}
+			std::cout << std::setprecision(std::numeric_limits<float>::digits10);
+			std::cout << f << "f" << std::endl;
 		}
 	}
 	catch( std::exception& e )
