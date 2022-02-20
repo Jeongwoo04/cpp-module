@@ -5,26 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 14:39:19 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 16:00:09 by jeson            ###   ########.fr       */
+/*   Created: 2022/02/19 18:14:32 by jeson             #+#    #+#             */
+/*   Updated: 2022/02/19 19:12:46 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include "iter.hpp"
 
-int	main( int argc, char **argv )
+int	main( void )
 {
-	if (argc != 2)
-	{
-		std::cerr << "Error: arguments\n";
-		return (1);
-	}
-	std::cout << "=========== Converting print ===========\n" << std::endl;
+	int	int_Arr[] = {1, 2, 3};
+	double	double_Arr[] = {1.01, 2.02, 3.03};
+	std::string	string_Arr[] = {"1.00a", "2.00b", "3.00c"};
 
-	Convert c(argv[1]);
-	c.printf();
+	iter(int_Arr, 3, &print_element);
 	std::cout << std::endl;
 
-	std::cout << "=========== finish ===========" << std::endl;
-	return (0);
+	iter(double_Arr, 3, &print_element);
+	std::cout << std::endl;
+
+	iter(string_Arr, 3, &print_element);
+	std::cout << std::endl;
+	return ( 0 );
 }

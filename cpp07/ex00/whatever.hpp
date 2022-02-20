@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 14:39:19 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 16:00:09 by jeson            ###   ########.fr       */
+/*   Created: 2022/02/19 17:33:16 by jeson             #+#    #+#             */
+/*   Updated: 2022/02/19 19:14:45 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-int	main( int argc, char **argv )
+# include <iostream>
+# include <string>
+
+template <typename T>
+void	swap(T& a, T& b)
 {
-	if (argc != 2)
-	{
-		std::cerr << "Error: arguments\n";
-		return (1);
-	}
-	std::cout << "=========== Converting print ===========\n" << std::endl;
+	T tmp;
 
-	Convert c(argv[1]);
-	c.printf();
-	std::cout << std::endl;
-
-	std::cout << "=========== finish ===========" << std::endl;
-	return (0);
+	tmp = a;
+	a = b;
+	b = tmp;
 }
+
+template <typename T>
+const T&	min(const T& a, const T& b)
+{
+	return (a < b ? a : b);
+}
+
+template <typename T>
+const T&	max(const T& a, const T& b)
+{
+	return (a > b ? a : b);
+}
+
+#endif

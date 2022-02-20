@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 14:39:19 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 16:00:09 by jeson            ###   ########.fr       */
+/*   Created: 2022/02/19 16:40:05 by jeson             #+#    #+#             */
+/*   Updated: 2022/02/19 17:14:34 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int	main( int argc, char **argv )
+# include <iostream>
+# include <cstdlib>
+# include <ctime>
+
+class Base
 {
-	if (argc != 2)
-	{
-		std::cerr << "Error: arguments\n";
-		return (1);
-	}
-	std::cout << "=========== Converting print ===========\n" << std::endl;
+public:
+	virtual ~Base();
+};
 
-	Convert c(argv[1]);
-	c.printf();
-	std::cout << std::endl;
+class A : public Base
+{
+};
 
-	std::cout << "=========== finish ===========" << std::endl;
-	return (0);
-}
+class B : public Base
+{
+};
+
+class C : public Base
+{
+};
+
+Base* generate(void);
+void identify(Base* p);
+void identify(Base& p);
+
+#endif

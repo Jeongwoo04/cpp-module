@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:50:25 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/16 15:14:29 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/19 16:06:35 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,19 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
+# include <cerrno>
+# include <cmath>
+# include <cstdlib>
+# include <cctype>
+# include <limits>
+# include <exception>
 
 class Convert
 {
 private:
-	double	value;
-	bool	err;
+	bool	_err;
+	double	val;
 
 public:
 	Convert();
@@ -28,6 +35,37 @@ public:
 	Convert(const Convert& src);
 	~Convert();
 	Convert&	operator=(const Convert& src);
+
+	void	printToInt( void ) const;
+	void	printToChar( void ) const;
+	void	printToDouble( void ) const;
+	void	printToFloat( void ) const;
+
+	void	printf( void ) const;
+
+	class errnoErangeException : public std::exception
+	{
+	public:
+		const char* what( void ) const throw();
+	};
+
+	class invalidInputException : public std::exception
+	{
+	public:
+		const char* what ( void ) const throw();
+	};
+
+	class impossibleException : public std::exception
+	{
+	public:
+		const char* what ( void ) const throw();
+	};
+
+	class nonDisplayableException : public std::exception
+	{
+	public:
+		const char* what ( void ) const throw();
+	};
 };
 
 #endif

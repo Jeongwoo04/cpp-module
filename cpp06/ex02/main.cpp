@@ -5,26 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 14:39:19 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 16:00:09 by jeson            ###   ########.fr       */
+/*   Created: 2022/02/19 16:41:14 by jeson             #+#    #+#             */
+/*   Updated: 2022/02/19 19:11:49 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include "Base.hpp"
 
-int	main( int argc, char **argv )
+int	main( void )
 {
-	if (argc != 2)
+	Base* tmp;
+
+	for (int i = 0; i < 10; i++)
 	{
-		std::cerr << "Error: arguments\n";
-		return (1);
+		tmp = generate();
+
+		std::cout << "identify pointer : ";
+		identify(tmp);
+		std::cout << "identify reference : ";
+		identify(*tmp);
+		std::cout << '\n' << std::endl;
+
+		delete tmp;
 	}
-	std::cout << "=========== Converting print ===========\n" << std::endl;
-
-	Convert c(argv[1]);
-	c.printf();
-	std::cout << std::endl;
-
-	std::cout << "=========== finish ===========" << std::endl;
-	return (0);
+	return ( 0 );
 }
