@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:12:27 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 22:54:07 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/21 19:02:12 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ const char*	Array<T>::OutOfRangeException::what( void ) const throw()
 	return ("Out of range Exception.");
 }
 
+#endif
+
 // Construction with no parameter: creates an empty array.
 // • Construction with an unsigned int n as a parameter: creates an array of n elements, initialized by default. (Tip: try to compile int * a = new int();, then
 // display *a.)
@@ -126,5 +128,3 @@ const char*	Array<T>::OutOfRangeException::what( void ) const throw()
 // • A member function size that returns the number of elements in the array. This
 // member function takes no parameter and does not modify the current instance in
 // any way.
-
-#endif
