@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:51:13 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/21 14:05:47 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/21 14:44:15 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,8 @@ void	Convert::printToFloat( void ) const
 		if (std::isinf(val))
 			std::cout << std::showpos;
 		float f = static_cast<float>(val);
-		int	i = static_cast<int>(val);
-		if (i == f && (val >= INT32_MIN && val <= INT32_MAX))
+		int i = static_cast<int>(val);
+		if (i == f && val >= INT32_MIN && val <= INT32_MAX)
 		{
 			if (this->len <= 6)
 				std::cout << f << ".0f" << std::endl;
@@ -171,7 +171,7 @@ void	Convert::printToDouble( void ) const
 	std::cout << "double: ";
 
 	int	i = static_cast<int>(val);
-	if (i == val && (i >= INT32_MIN && i <= INT32_MAX))
+	if (i == val && i >= INT32_MIN && i <= INT32_MAX)
 	{
 		if (this->len <= 6)
 			std::cout << val << ".0" << std::endl;
@@ -202,9 +202,11 @@ void	Convert::setInput( std::string str )
 
 	if (this->val == 0)
 		return ;
-	if (str.find_first_not_of('0') == str.find('.', 0))
+	if (str.find('.', 0) != std::string::npos \
+		&& str.find_first_not_of('0', 0) == str.find('.', 0))
 		input = str.substr(str.find('.') - 1, -1);
-	std::cout << input << std::endl;;
+	else
+		input = str;
 	if (input.find(".", 0) != std::string::npos)
 	{
 		while (static_cast<size_t>(i) < input.length() && input.at(++i))
