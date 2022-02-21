@@ -1,8 +1,8 @@
-NAME		= ex02
+NAME		= mutantstack
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 INC			= -I includes
-SRCS		= main.cpp
+SRCS		= mutantstack.cpp main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
 
