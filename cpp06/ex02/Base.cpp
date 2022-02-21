@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:40:52 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/20 20:22:14 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/21 17:47:07 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ Base::~Base()
 // Feel free to use anything you like for the randomness.
 Base* generate(void)
 {
+	// std::srand( time( NULL ) );
+	// int r = std::rand() % 3;
 	int r = std::rand() % 3;
 
 	switch(r)

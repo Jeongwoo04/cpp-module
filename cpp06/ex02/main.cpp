@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:41:14 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/20 14:38:42 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/21 17:48:13 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	main( void )
 	}
 
 	// up -> down -> err // solution) using dynamic_cast !
-	// Base* Btest = new A();
-	// A* Atest = Btest;
 
 	return ( 0 );
 }
