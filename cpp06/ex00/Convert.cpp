@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:51:13 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/21 12:26:26 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/21 14:05:47 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ Convert::Convert(std::string input): _err(false), val(0.0)
 	{
 		_err = true;
 		std::cout << e.what() << std::endl;
+		return ;
 	}
 	setInput(input);
 }
@@ -194,19 +195,26 @@ void	Convert::printf( void ) const
 	printToDouble();
 }
 
-void	Convert::setInput( std::string input )
+void	Convert::setInput( std::string str )
 {
 	int i = -1;
-	if ((input.find(".", 0) != std::string::npos))
+	std::string input;
+
+	if (this->val == 0)
+		return ;
+	if (str.find_first_not_of('0') == str.find('.', 0))
+		input = str.substr(str.find('.') - 1, -1);
+	std::cout << input << std::endl;;
+	if (input.find(".", 0) != std::string::npos)
 	{
-		while (input.at(++i))
+		while (static_cast<size_t>(i) < input.length() && input.at(++i))
 		{
 			if (input.at(i) == '0' || input.at(i) == '.')
 				continue;
 			else
 				break;
 		}
-		if (input.find(".", 0) == 1)
+		if (input.find(".", 0) != std::string::npos)
 		{
 			if (input.at(0) == '0')
 				this->len = input.find_last_not_of('0') - input.find_first_not_of('0', input.find('.') + 1) + 1;
