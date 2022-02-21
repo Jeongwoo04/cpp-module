@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:51:13 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/20 20:18:51 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/21 12:26:26 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ Convert::Convert(std::string input): _err(false), val(0.0)
 		_err = true;
 		std::cout << e.what() << std::endl;
 	}
+	setInput(input);
 }
 
 Convert::Convert(const Convert& src)
@@ -147,12 +148,14 @@ void	Convert::printToFloat( void ) const
 		int	i = static_cast<int>(val);
 		if (i == f && (val >= INT32_MIN && val <= INT32_MAX))
 		{
-			std::cout << std::setprecision(10);
-			std::cout << f << ".0f" << std::endl;
+			if (this->len <= 6)
+				std::cout << f << ".0f" << std::endl;
+			else
+				std::cout << f << "f" << std::endl;
 		}
 		else
 		{
-			std::cout << std::setprecision(10);
+			std::cout << std::setprecision(7);
 			std::cout << f << "f" << std::endl;
 		}
 	}
@@ -169,12 +172,14 @@ void	Convert::printToDouble( void ) const
 	int	i = static_cast<int>(val);
 	if (i == val && (i >= INT32_MIN && i <= INT32_MAX))
 	{
-		std::cout << std::setprecision(10);
-		std::cout << val << ".0" << std::endl;
+		if (this->len <= 6)
+			std::cout << val << ".0" << std::endl;
+		else
+			std::cout << val << std::endl;
 	}
 	else
 	{
-		std::cout << std::setprecision(10);
+		std::cout << std::setprecision(15);
 		std::cout << val << std::endl;
 	}
 }
@@ -187,4 +192,34 @@ void	Convert::printf( void ) const
 	printToInt();
 	printToFloat();
 	printToDouble();
+}
+
+void	Convert::setInput( std::string input )
+{
+	int i = -1;
+	if ((input.find(".", 0) != std::string::npos))
+	{
+		while (input.at(++i))
+		{
+			if (input.at(i) == '0' || input.at(i) == '.')
+				continue;
+			else
+				break;
+		}
+		if (input.find(".", 0) == 1)
+		{
+			if (input.at(0) == '0')
+				this->len = input.find_last_not_of('0') - input.find_first_not_of('0', input.find('.') + 1) + 1;
+			else
+				this->len = input.find_last_not_of('0');
+		}
+		else
+			this->len = input.find_last_not_of('0');
+		this->type = 'd';
+	}
+	else
+	{
+		this->len = input.length();
+		this->type = 'i';
+	}
 }

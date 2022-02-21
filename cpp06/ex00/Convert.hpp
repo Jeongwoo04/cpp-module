@@ -6,7 +6,7 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:50:25 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/20 18:21:53 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/21 12:06:14 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Convert
 private:
 	bool	_err;
 	double	val;
+	char	type;
+	size_t	len;
 
 public:
 	Convert();
@@ -42,6 +44,8 @@ public:
 	void	printToFloat( void ) const;
 
 	void	printf( void ) const;
+
+	void	setInput( std::string input );
 
 	class errnoErangeException : public std::exception
 	{
