@@ -6,11 +6,11 @@
 /*   By: jeson <jeson@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:12:19 by jeson             #+#    #+#             */
-/*   Updated: 2022/02/19 23:19:51 by jeson            ###   ########.fr       */
+/*   Updated: 2022/02/22 12:03:21 by jeson            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "array.hpp"
+#include "Array.hpp"
 
 int	main( void )
 {
